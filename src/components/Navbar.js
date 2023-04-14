@@ -14,8 +14,8 @@ function Navbar(props) {
             <img src={logo} alt="Logo" width={160} height={32} loading='lazy' />
         </Link>
 
-        <nav>
-            <ul className='flex gap-x-6 text-gray-300'>
+        <nav className='mx-2 '>
+            <ul className='flex gap-x-2 md:gap-x-6 text-gray-300'>
                 <li>
                     <Link to="/">Home</Link>
                 </li>
@@ -31,17 +31,17 @@ function Navbar(props) {
         <div className="flex items-center text-gray-300 gap-x-4">
             { !isLoggedIn &&
                 <Link to="/login">
-                    <button className='bg-gray-800 py-[8px] px-[12px] rounded border border-gray-700'>Log in</button>
+                    <button className='bg-gray-800 py-[2px] md:py-[8px] px-[12px] rounded border border-gray-700'>Log in</button>
                 </Link>
             }
             { !isLoggedIn &&  
                 <Link to="/signup">
-                    <button className='bg-gray-800 py-[8px] px-[12px] rounded border border-gray-700'>Sign up</button>
+                    <button className='bg-gray-800 py-[2px] md:py-[8px] px-[12px] rounded border border-gray-700'>Sign up</button>
                 </Link>
             }
             { isLoggedIn &&
                 <Link to="/">
-                    <button className='bg-gray-800 py-[8px] px-[12px] rounded border border-gray-700' onClick={()=>{
+                    <button className='bg-gray-800 py-[2px] md:py-[8px] px-[12px] rounded border border-gray-700' onClick={()=>{
                         setIsLoggedIn(false);
                         toast.success("Logged Out")
                     }}>Logout</button>
@@ -49,7 +49,7 @@ function Navbar(props) {
             }
             { isLoggedIn &&  
                 <Link to="/dashboard">
-                    <button className='bg-gray-800 py-[8px] px-[12px] rounded border border-gray-700'>Dashboard</button>
+                    <button className='bg-gray-800 py-[2px] md:py-[8px] px-[12px] rounded border border-gray-700'>Dashboard</button>
                 </Link>
             }
         </div>
